@@ -1,0 +1,943 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="وب‌سایت جامع آشنایی با زندگی، آثار، اندیشه‌ها و اشعار سعدی شیرازی، استاد سخن و شاعر بزرگ ایرانی">
+    <meta name="author" content="وب‌سایت شناخت سعدی">
+    <title>سعدی شیرازی | استاد سخن و شاعر بزرگ ایران</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --green: #174d3c;
+            --gold: #d6ad60;
+            --cream: #f8f4e9;
+            --dark: #202820;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background-color: var(--cream);
+            color: var(--dark);
+            line-height: 2.2;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            background-color: var(--green);
+            color: var(--white);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: var(--gold);
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .hero {
+            min-height: 480px;
+            padding: 80px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                linear-gradient(
+                    rgba(15, 49, 37, 0.88),
+                    rgba(15, 49, 37, 0.91)
+                );
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 55px);
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background-color: var(--gold);
+            color: #18382c;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background-color: white;
+            transform: translateY(-3px);
+        }
+
+        .container {
+            width: 84%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            padding: 65px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--green);
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            align-items: start;
+        }
+
+        .about-text {
+            background-color: var(--white);
+            padding: 28px;
+            border-radius: 12px;
+            border-right: 5px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-text h3 {
+            color: var(--green);
+            margin-bottom: 15px;
+        }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .fact {
+            background: var(--green);
+            color: white;
+            padding: 22px 12px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .fact strong {
+            display: block;
+            color: var(--gold);
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .works {
+            background-color: #eee8d9;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--white);
+            padding: 28px;
+            border-radius: 12px;
+            border-top: 4px solid var(--gold);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: var(--green);
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .poetry {
+            background-color: var(--green);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .poetry .section-title {
+            color: var(--gold);
+        }
+
+        .poem-box {
+            max-width: 850px;
+            margin: 25px auto;
+            padding: 30px;
+            border: 1px solid rgba(214, 173, 96, 0.6);
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.04);
+        }
+
+        .poem-box p {
+            font-size: 20px;
+            line-height: 2.5;
+        }
+
+        .poem-note {
+            color: var(--gold);
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .ideas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .idea {
+            background: white;
+            border-radius: 10px;
+            padding: 22px;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .idea h3 {
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+
+        .timeline {
+            border-right: 3px solid var(--gold);
+            margin: 30px 15px;
+            padding-right: 25px;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            right: -34px;
+            top: 13px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--green);
+            border: 2px solid var(--gold);
+        }
+
+        .timeline-item h3 {
+            color: var(--green);
+        }
+
+        .quote {
+            background: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            border: 1px solid #e2d6bc;
+            font-size: 22px;
+            color: var(--green);
+        }
+
+        .quote small {
+            display: block;
+            font-size: 14px;
+            color: #777;
+            margin-top: 15px;
+        }
+
+        .conclusion {
+            background: #eee8d9;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        footer {
+            background: #102f25;
+            color: white;
+            text-align: center;
+            padding: 28px 15px;
+            border-top: 4px solid var(--gold);
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #ddd;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--gold);
+        }
+
+        @media (max-width: 700px) {
+            header {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 60px 6%;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            .section-title {
+                font-size: 25px;
+            }
+
+            .poem-box p {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- سربرگ و منوی اصلی سایت -->
+    <header id="top">
+        <div class="logo">حکایت سعدی</div>
+
+        <nav>
+            <a href="#home">صفحه اصلی</a>
+            <a href="#about">زندگی‌نامه</a>
+            <a href="#works">آثار</a>
+            <a href="#timeline">زندگی سعدی</a>
+            <a href="#poetry">اشعار</a>
+            <a href="#thoughts">اندیشه‌ها</a>
+        </nav>
+    </header>
+
+    <!-- بخش معرفی اصلی -->
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>سعدی شیرازی؛ استاد سخن</h1>
+
+                <p>
+                    آشنایی با زندگی، آثار، اندیشه‌ها و میراث ادبی یکی از
+                    بزرگ‌ترین شاعران و نویسندگان زبان فارسی؛ مردی که سخنان
+                    حکیمانه‌اش پس از گذشت قرن‌ها همچنان در زندگی انسان‌ها
+                    جایگاه ویژه‌ای دارد.
+                </p>
+
+                <a href="#about" class="hero-button">
+                    آشنایی با زندگی سعدی
+                </a>
+            </div>
+        </section>
+
+        <!-- زندگی نامه -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">زندگی‌نامه سعدی شیرازی</h2>
+
+                <p class="section-description">
+                    نگاهی به زندگی و شخصیت شاعر بزرگ ایران
+                </p>
+
+                <div class="about-content">
+                    <article class="about-text">
+                        <h3>سعدی که بود؟</h3>
+
+                        <p>
+                            ابومحمد مشرف‌الدین مصلح بن عبدالله شیرازی،
+                            مشهور به سعدی، یکی از برجسته‌ترین شاعران و
+                            نویسندگان ادبیات فارسی است. او در سده هفتم
+                            هجری قمری می‌زیست و با آثار ارزشمند خود،
+                            تأثیری ماندگار بر زبان و فرهنگ ایرانی گذاشت.
+                        </p>
+
+                        <p>
+                            سعدی به دلیل توانایی کم‌نظیر در بیان مفاهیم
+                            اخلاقی، اجتماعی و انسانی با زبانی ساده،
+                            روان و دلنشین، به عنوان استاد سخن شناخته
+                            می‌شود. نوشته‌های او ترکیبی از تجربه زندگی،
+                            دانش، حکمت و نگاه دقیق به رفتار انسان‌هاست.
+                        </p>
+                    </article>
+
+                    <article class="about-text">
+                        <h3>تولد و دوران زندگی</h3>
+
+                        <p>
+                            سعدی در شیراز متولد شد. تاریخ دقیق تولد او
+                            به‌طور قطعی مشخص نیست، اما معمولاً تولدش را
+                            در اواخر سده ششم یا اوایل سده هفتم هجری قمری
+                            دانسته‌اند.
+                        </p>
+
+                        <p>
+                            او در دوران جوانی برای تحصیل به بغداد رفت
+                            و در محیط علمی مدرسه نظامیه با دانش‌های
+                            زمان خود آشنا شد. سفرهای طولانی و دیدار با
+                            مردم و فرهنگ‌های گوناگون نیز در شکل‌گیری
+                            اندیشه‌های او نقش مهمی داشت.
+                        </p>
+                    </article>
+
+                    <article class="about-text">
+                        <h3>جایگاه سعدی در ادبیات فارسی</h3>
+
+                        <p>
+                            سعدی از استادان بزرگ غزل فارسی و از
+                            برجسته‌ترین نویسندگان نثر فارسی است.
+                            او توانست موضوعات پیچیده اخلاقی و انسانی
+                            را با مثال‌ها، حکایت‌ها و جمله‌هایی روشن
+                            و ماندگار بیان کند.
+                        </p>
+
+                        <p>
+                            آثار او قرن‌ها در مراکز آموزشی خوانده
+                            شده‌اند و بسیاری از بیت‌ها و حکایت‌هایش
+                            به بخشی از فرهنگ عمومی مردم فارسی‌زبان
+                            تبدیل شده‌اند.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="facts">
+                    <div class="fact">
+                        <strong>شیراز</strong>
+                        زادگاه سعدی
+                    </div>
+
+                    <div class="fact">
+                        <strong>سده هفتم</strong>
+                        دوران شکوفایی ادبی
+                    </div>
+
+                    <div class="fact">
+                        <strong>گلستان</strong>
+                        شاهکار نثر فارسی
+                    </div>
+
+                    <div class="fact">
+                        <strong>بوستان</strong>
+                        منظومه اخلاقی و حکمی
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- آثار سعدی -->
+        <section class="works" id="works">
+            <div class="container">
+                <h2 class="section-title">آثار برجسته سعدی</h2>
+
+                <p class="section-description">
+                    آثاری که در تاریخ ادبیات فارسی جایگاهی ماندگار دارند
+                </p>
+
+                <div class="cards">
+                    <article class="card">
+                        <h3>گلستان</h3>
+
+                        <p>
+                            گلستان یکی از مشهورترین آثار سعدی است که
+                            در سال ۶۵۶ هجری قمری تألیف شد. این کتاب
+                            مجموعه‌ای از حکایت‌های کوتاه، اندرزهای
+                            اخلاقی، نکته‌های اجتماعی و نوشته‌های
+                            ادبی است. نثر گلستان آهنگین و آمیخته
+                            با شعر است و نویسنده در آن با استفاده
+                            از طنز، تجربه و حکمت، رفتارهای انسانی
+                            را بررسی می‌کند.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>بوستان</h3>
+
+                        <p>
+                            بوستان یا سعدی‌نامه منظومه‌ای اخلاقی
+                            است که در سال ۶۵۵ هجری قمری سروده شد.
+                            این اثر در قالب مثنوی نوشته شده و
+                            موضوعاتی مانند عدالت، احسان، عشق،
+                            فروتنی، قناعت، تربیت و شیوه درست
+                            زندگی را مطرح می‌کند. بوستان نمونه‌ای
+                            برجسته از پیوند شعر و حکمت در ادبیات
+                            فارسی است.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>غزلیات</h3>
+
+                        <p>
+                            غزل‌های سعدی از زیباترین نمونه‌های
+                            غزل عاشقانه و عارفانه در زبان فارسی
+                            به شمار می‌روند. او احساسات انسانی،
+                            اشتیاق، دوری، زیبایی، عشق و دلبستگی
+                            را با زبانی روان و موسیقی دلنشین
+                            بیان می‌کند. سادگی و استواری زبان
+                            از ویژگی‌های مهم غزل‌های اوست.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>قصاید و قطعات</h3>
+
+                        <p>
+                            سعدی در قصیده‌ها و قطعات خود به
+                            موضوعات اخلاقی، اجتماعی، ستایش،
+                            پند و مسائل روزگارش پرداخته است.
+                            این آثار نشان می‌دهند که او علاوه
+                            بر شناخت احساسات فردی، به رفتار
+                            حاکمان، مسئولیت اجتماعی و وضعیت
+                            مردم نیز توجه داشته است.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>نصیحت و حکمت</h3>
+
+                        <p>
+                            در بخش‌های مختلف آثار سعدی،
+                            حکایت‌هایی درباره خرد، تجربه،
+                            دوستی، عدالت، مهربانی و پیامدهای
+                            رفتار نادرست دیده می‌شود. او
+                            معمولاً به جای بیان مستقیم یک
+                            قانون اخلاقی، با داستان و نمونه‌ای
+                            ملموس خواننده را به اندیشیدن دعوت
+                            می‌کند.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>دیوان سعدی</h3>
+
+                        <p>
+                            دیوان سعدی مجموعه‌ای از شعرهای
+                            او در قالب‌های مختلف ادبی است.
+                            غزلیات، قصاید، قطعات، رباعیات
+                            و دیگر سروده‌ها در نسخه‌ها و
+                            تصحیح‌های گوناگون دیوان گردآوری
+                            شده‌اند. این مجموعه برای شناخت
+                            زبان شاعر و گستره اندیشه‌های
+                            ادبی او اهمیت فراوانی دارد.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- مسیر زندگی -->
+        <section id="timeline">
+            <div class="container">
+                <h2 class="section-title">مروری بر زندگی سعدی</h2>
+
+                <p class="section-description">
+                    رویدادهای مهم زندگی و فعالیت ادبی او
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>تولد در شیراز</h3>
+
+                        <p>
+                            سعدی در شیراز و در دوره‌ای پرتحول از
+                            تاریخ ایران به دنیا آمد. خانواده،
+                            محیط فرهنگی و آموزش‌های اولیه در
+                            شکل‌گیری شخصیت او مؤثر بودند.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>تحصیل در بغداد</h3>
+
+                        <p>
+                            سعدی برای ادامه تحصیل به بغداد سفر
+                            کرد و در محیط علمی آن روزگار با
+                            علوم دینی، ادبی و دانش‌های رایج
+                            آشنا شد.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>سفرها و تجربه‌های زندگی</h3>
+
+                        <p>
+                            در زندگی‌نامه سنتی سعدی از سفرهای
+                            فراوان او سخن گفته شده است. تجربه
+                            دیدار با افراد و محیط‌های گوناگون
+                            در حکایت‌ها و نگاه اجتماعی او
+                            بازتاب یافته است؛ هرچند جزئیات
+                            همه این سفرها از نظر تاریخی قطعی نیست.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>تألیف بوستان در سال ۶۵۵ هجری قمری</h3>
+
+                        <p>
+                            سعدی منظومه بوستان را پدید آورد؛
+                            اثری که در آن فضیلت‌های اخلاقی،
+                            عدالت، بخشندگی و تربیت انسان
+                            با زبانی شاعرانه مطرح می‌شوند.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>تألیف گلستان در سال ۶۵۶ هجری قمری</h3>
+
+                        <p>
+                            گلستان با ترکیبی از نثر آهنگین،
+                            شعر و حکایت نوشته شد و به یکی
+                            از آثار اثرگذار نثر فارسی تبدیل
+                            گردید.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>ماندگاری در فرهنگ ایران</h3>
+
+                        <p>
+                            سعدی پس از زندگی خود نیز در
+                            آموزش زبان فارسی، ادبیات،
+                            اخلاق و اندیشه اجتماعی تأثیرگذار
+                            باقی ماند. آرامگاه او در شیراز
+                            امروزه یکی از مکان‌های فرهنگی
+                            شناخته‌شده ایران است.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- اشعار سعدی -->
+        <section class="poetry" id="poetry">
+            <div class="container">
+                <h2 class="section-title">اشعار و سخنان ماندگار سعدی</h2>
+
+                <p class="section-description">
+                    نمونه‌هایی از نگاه انسانی و ادبی سعدی
+                </p>
+
+                <div class="poem-box">
+                    <p>
+                        بنی‌آدم اعضای یکدیگرند<br>
+                        که در آفرینش ز یک گوهرند
+                    </p>
+
+                    <p>
+                        چو عضوی به درد آورد روزگار<br>
+                        دگر عضوها را نماند قرار
+                    </p>
+
+                    <div class="poem-note">
+                        برگرفته از گلستان سعدی، باب اول
+                    </div>
+                </div>
+
+                <div class="poem-box">
+                    <p>
+                        به جهان خرم از آنم که جهان خرم از اوست<br>
+                        عاشقم بر همه عالم که همه عالم از اوست
+                    </p>
+
+                    <div class="poem-note">
+                        از غزلیات سعدی
+                    </div>
+                </div>
+
+                <div class="poem-box">
+                    <p>
+                        ابر و باد و مه و خورشید و فلک در کارند<br>
+                        تا تو نانی به کف آری و به غفلت نخوری
+                    </p>
+
+                    <div class="poem-note">
+                        از سروده‌های مشهور سعدی
+                    </div>
+                </div>
+
+                <div class="poem-box">
+                    <p>
+                        تن آدمی شریف است به جان آدمیت<br>
+                        نه همین لباس زیباست نشان آدمیت
+                    </p>
+
+                    <div class="poem-note">
+                        از اشعار مشهور منسوب به مجموعه آثار سعدی
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- اندیشه های سعدی -->
+        <section id="thoughts">
+            <div class="container">
+                <h2 class="section-title">اندیشه‌ها و آموزه‌های سعدی</h2>
+
+                <p class="section-description">
+                    مفاهیمی که در بسیاری از آثار او دیده می‌شوند
+                </p>
+
+                <div class="ideas">
+                    <article class="idea">
+                        <h3>انسان‌دوستی</h3>
+
+                        <p>
+                            سعدی بر همدلی با دیگران و توجه به
+                            رنج و شادی انسان‌ها تأکید می‌کند.
+                            از نگاه او، انسان‌ها در زندگی
+                            اجتماعی به یکدیگر وابسته‌اند.
+                        </p>
+                    </article>
+
+                    <article class="idea">
+                        <h3>عدالت</h3>
+
+                        <p>
+                            عدالت و رعایت حقوق مردم از
+                            موضوعات مهم در آثار سعدی است.
+                            او درباره مسئولیت صاحبان قدرت
+                            و پیامدهای ستم هشدار می‌دهد.
+                        </p>
+                    </article>
+
+                    <article class="idea">
+                        <h3>خرد و تجربه</h3>
+
+                        <p>
+                            سعدی تجربه زندگی را منبعی برای
+                            شناخت انسان و تصمیم‌گیری درست
+                            می‌داند. حکایت‌های او اغلب
+                            خواننده را به تفکر دعوت می‌کنند.
+                        </p>
+                    </article>
+
+                    <article class="idea">
+                        <h3>فروتنی</h3>
+
+                        <p>
+                            در آثار سعدی، خودپسندی و غرور
+                            بارها نقد می‌شوند. او فروتنی
+                            و شناخت محدودیت‌های انسانی را
+                            از نشانه‌های خرد می‌شمارد.
+                        </p>
+                    </article>
+
+                    <article class="idea">
+                        <h3>دانش و تربیت</h3>
+
+                        <p>
+                            سعدی به نقش آموزش، پرورش
+                            اخلاقی و رفتار درست در ساختن
+                            شخصیت انسان توجه دارد و
+                            اهمیت عمل به دانسته‌ها را
+                            یادآوری می‌کند.
+                        </p>
+                    </article>
+
+                    <article class="idea">
+                        <h3>دوستی و مهربانی</h3>
+
+                        <p>
+                            دوستی واقعی در آثار سعدی با
+                            وفاداری، صداقت و توجه به
+                            دیگران همراه است. او رفتار
+                            نیک را پایه روابط سالم
+                            انسانی می‌داند.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- تحلیل ادبی -->
+        <section class="works" id="style">
+            <div class="container">
+                <h2 class="section-title">ویژگی‌های سبک ادبی سعدی</h2>
+
+                <p class="section-description">
+                    چرا آثار سعدی همچنان خواندنی و تأثیرگذارند؟
+                </p>
+
+                <div class="cards">
+                    <article class="card">
+                        <h3>زبان روان و ساده</h3>
+
+                        <p>
+                            سعدی مفاهیم عمیق را با زبانی
+                            قابل فهم بیان می‌کند. این ویژگی
+                            سبب شده است که آثار او برای
+                            گروه‌های گوناگون خوانندگان
+                            جذاب و آموزنده باشند.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>حکایت‌پردازی</h3>
+
+                        <p>
+                            داستان‌های کوتاه و آموزنده
+                            در گلستان نقش مهمی دارند.
+                            سعدی با شخصیت‌پردازی و موقعیت‌های
+                            ملموس، نکته‌های اخلاقی و اجتماعی
+                            را به خواننده منتقل می‌کند.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>موسیقی کلام</h3>
+
+                        <p>
+                            آهنگ واژه‌ها، تناسب عبارت‌ها،
+                            قافیه و کاربرد آرایه‌های ادبی
+                            به نوشته‌ها و سروده‌های سعدی
+                            زیبایی خاصی بخشیده‌اند.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>شناخت رفتار انسان</h3>
+
+                        <p>
+                            سعدی با دقت به عادت‌ها،
+                            احساسات، ضعف‌ها و توانایی‌های
+                            انسان نگاه می‌کند. همین شناخت
+                            سبب می‌شود بسیاری از نکته‌های
+                            آثارش در دوره‌های مختلف قابل
+                            درک و استفاده باشند.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- جمع بندی -->
+        <section id="conclusion">
+            <div class="container">
+                <h2 class="section-title">میراث فرهنگی سعدی</h2>
+
+                <div class="conclusion">
+                    <p>
+                        سعدی شیرازی یکی از چهره‌های ماندگار
+                        فرهنگ و ادبیات ایران است. ارزش آثار
+                        او تنها به زیبایی شعر و نثر محدود
+                        نمی‌شود؛ بلکه توجه به اخلاق، عدالت،
+                        انسان‌دوستی، تجربه و روابط اجتماعی
+                        نیز بخش مهمی از میراث فکری او را
+                        تشکیل می‌دهد.
+                    </p>
+
+                    <p>
+                        گلستان با حکایت‌های کوتاه و نثر
+                        آهنگین خود، و بوستان با سروده‌های
+                        حکمت‌آمیزش، دو اثر برجسته در
+                        ادبیات فارسی به شمار می‌روند.
+                        غزلیات سعدی نیز نمونه‌ای درخشان
+                        از توانایی زبان فارسی در بیان
+                        عشق و احساسات انسانی هستند.
+                    </p>
+
+                    <p>
+                        مطالعه آثار سعدی فرصتی برای
+                        آشنایی با زبان فارسی، تاریخ
+                        فرهنگی ایران و دیدگاه‌های
+                        اخلاقی و اجتماعی یکی از
+                        بزرگ‌ترین نویسندگان این سرزمین
+                        فراهم می‌کند. به همین دلیل،
+                        نام سعدی پس از گذشت قرن‌ها
+                        همچنان با حکمت، زیبایی کلام
+                        و انسان‌دوستی پیوند دارد.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- پابرگ سایت -->
+    <footer>
+        <h2>سعدی شیرازی؛ صدای ماندگار حکمت و ادب</h2>
+
+        <p>
+            این وب‌سایت با هدف معرفی زندگی، آثار و اندیشه‌های
+            سعدی شیرازی طراحی شده است.
+        </p>
+
+        <p>
+            تهیه‌شده برای آشنایی با میراث ارزشمند ادبیات فارسی
+        </p>
+
+        <a href="#top" class="back-to-top">
+            بازگشت به بالای صفحه ↑
+        </a>
+    </footer>
+
+</body>
+</html>
